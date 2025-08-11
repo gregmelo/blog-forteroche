@@ -11,7 +11,8 @@ class ArticleManager extends AbstractEntityManager
      */
     public function getAllArticles() : array
     {
-        $sql = "SELECT * FROM article";
+        // $sql = "SELECT * FROM article";
+        $sql = "SELECT id, id_user, title, content, date_creation, date_update, views FROM article";
         $result = $this->db->query($sql);
         $articles = [];
 
@@ -28,7 +29,8 @@ class ArticleManager extends AbstractEntityManager
      */
     public function getArticleById(int $id) : ?Article
     {
-        $sql = "SELECT * FROM article WHERE id = :id";
+        // $sql = "SELECT * FROM article WHERE id = :id";
+        $sql = "SELECT id, id_user, title, content, date_creation, date_update, views FROM article WHERE id = :id";
         $result = $this->db->query($sql, ['id' => $id]);
         $article = $result->fetch();
         if ($article) {
@@ -91,5 +93,16 @@ class ArticleManager extends AbstractEntityManager
     {
         $sql = "DELETE FROM article WHERE id = :id";
         $this->db->query($sql, ['id' => $id]);
+    }
+
+    /**
+     * incrémenter les views d'un article
+     * @param int $id : l'id de l'article.
+     * @return void
+     */
+    public function incrementViews(int $articleId): void
+    {
+        $sql = "UPDATE article SET views = views + 1 WHERE id = :id";
+        $this->db->query($sql, ['id' => $articleId]);
     }
 }
