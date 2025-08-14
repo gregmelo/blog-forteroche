@@ -110,20 +110,15 @@ class ArticleManager extends AbstractEntityManager
      * Récupère les articles avec leurs statistiques.
      * @return array : un tableau d'articles avec leurs statistiques.
      */
-    public function getArticlesWithStats()
+    public function getArticlesWithStats($sort, $order)
     {
-        $sql = "
-        SELECT 
-            a.id,
-            a.title,
-            a.views,
-            a.date_creation,
-            COUNT(c.id) AS nb_comments
-        FROM article a
-        LEFT JOIN comment c ON c.id_article = a.id
-        GROUP BY a.id, a.title, a.views, a.date_creation
-        ORDER BY a.date_creation DESC
-    ";
+$sql = "
+    SELECT a.id, a.title, a.views, a.date_creation, COUNT(c.id) AS nb_comments
+    FROM article a
+    LEFT JOIN comment c ON c.id_article = a.id
+    GROUP BY a.id, a.title, a.views, a.date_creation
+    ORDER BY $sort $order
+";
         $stmt = $this->db->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

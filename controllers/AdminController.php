@@ -182,9 +182,24 @@ class AdminController
 
     public function moreInformations()
     {
-        // Récupère les statistiques via le manager d’articles
+        // Récupérer les paramètres de tri
+        $sort = $_GET['sort'] ?? 'date_creation'; // colonne par défaut
+        $order = $_GET['order'] ?? 'desc';        // ordre par défaut
+
+        // Sécuriser les valeurs reçues
+        $validSorts = ['title', 'views', 'nb_comments', 'date_creation'];
+        $validOrders = ['asc', 'desc'];
+
+        if (!in_array($sort, $validSorts)) {
+            $sort = 'date_creation';
+        }
+        if (!in_array($order, $validOrders)) {
+            $order = 'desc';
+        }
+
+        // Appel au manager avec les paramètres de tri
         $articleManager = new ArticleManager();
-        $articlesStats = $articleManager->getArticlesWithStats();
+        $articlesStats = $articleManager->getArticlesWithStats($sort, $order);
 
         // Appelle la vue en lui passant les statistiques
         $view = new View('moreInformationsArticle');
