@@ -56,7 +56,10 @@
                 <td><?= htmlspecialchars($article['title']) ?></td>
                 <td><?= htmlspecialchars($article['views']) ?></td>
                 <td><?= htmlspecialchars($article['nb_comments']) ?></td>
-                <td><?= htmlspecialchars($article['date_creation']) ?></td>
+                <td> <?php
+                        $date = new DateTime($article['date_creation']);
+                        echo $date->format('d/m/Y à H:i');
+                        ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
