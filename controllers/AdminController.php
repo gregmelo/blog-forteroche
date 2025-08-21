@@ -205,4 +205,20 @@ class AdminController
         $view = new View('moreInformationsArticle');
         $view->render('moreInformationsArticle', ['articlesStats' => $articlesStats]);
     }
+
+    public function deleteComment()
+    {
+        $this->checkIfUserIsConnected();
+
+        $idComment = Utils::request("id", -1);
+
+        // suppression du commentaire
+            $commentManager = new CommentManager();
+            $comment = $commentManager->getCommentById($idComment);
+            $commentManager->deleteComment($comment);
+
+        // On redirige vers la page de l'article.
+        $idArticle = $comment->getIdArticle();
+        Utils::redirect("showArticle", ['id' => $idArticle]);
+    }
 }

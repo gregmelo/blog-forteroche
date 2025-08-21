@@ -279,6 +279,17 @@ a.info {
     color: var(--quoteColor);
 }
 
+.comment {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.commentContent {
+    display: flex;
+    width: 80%;
+}
 /* On redéfinit certaines parties du "info" pour l'affichage dans les commentaires */
 .detailComment .info {
     margin: 5px 0 5px 0;
@@ -287,6 +298,26 @@ a.info {
 
 .detailComment .content {
     margin: 5px 0 5px 0;
+}
+
+.btn-supprimer {
+    width: 20%;
+    text-align: end;
+}
+
+.btn-supprimer a {
+    background-color: #f13c1f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.btn-supprimer a:hover {
+    background-color: #d79922;
 }
 
 /* Page d'erreur */
@@ -416,3 +447,4 @@ footer {
     color: white;
     background-color: var(--headerColor);
 }
+
