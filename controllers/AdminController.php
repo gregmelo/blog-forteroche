@@ -180,7 +180,7 @@ class AdminController
     }
 
 
-    public function moreInformations()
+    public function statistiques()
     {
         // Récupérer les paramètres de tri
         $sort = $_GET['sort'] ?? 'date_creation'; // colonne par défaut
@@ -202,8 +202,8 @@ class AdminController
         $articlesStats = $articleManager->getArticlesWithStats($sort, $order);
 
         // Appelle la vue en lui passant les statistiques
-        $view = new View('moreInformationsArticle');
-        $view->render('moreInformationsArticle', ['articlesStats' => $articlesStats]);
+        $view = new View('statistiquesArticle');
+        $view->render('statistiquesArticle', ['articlesStats' => $articlesStats]);
     }
 
     public function deleteComment()

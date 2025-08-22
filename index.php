@@ -74,9 +74,9 @@ try {
             $adminController->deleteArticle();
             break;
 
-        case 'showMoreInformations':
+        case 'statistiques':
             $adminController = new AdminController();
-            $adminController->moreInformations();
+            $adminController->statistiques();
             break;
 
         case 'deleteComment':

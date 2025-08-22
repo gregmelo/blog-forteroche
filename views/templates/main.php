@@ -26,7 +26,7 @@
                 // Si on est connecté, on affiche le bouton de déconnexion, sinon, on affiche le bouton de connexion : 
                 if (isset($_SESSION['user'])) {
                     echo '<a href="index.php?action=admin">Edition des articles</a>';
-                    echo '<a href="index.php?action=showMoreInformations">statistiques</a>';
+                    echo '<a href="index.php?action=statistiques">statistiques</a>';
                     echo '<a href="index.php?action=disconnectUser">Déconnexion</a>';
                 }
                 ?>

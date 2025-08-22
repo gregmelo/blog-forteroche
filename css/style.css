@@ -154,6 +154,7 @@ header>nav {
     display: flex;
     justify-content: flex-end;
     background-color: var(--headerColor);
+    padding-right: 20px;
 }
 
 header>nav>a {
@@ -170,7 +171,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    /* width: 80%; */
     max-width: 1000px;
     margin: 0 50px 100px 50px;
 }
@@ -359,6 +360,15 @@ a.info {
     align-items: center;
 }
 
+/* alterner les couleurs des lignes du tableau */
+.articleLine:nth-child(even) {
+    background-color: var(--commentPaleColor); /* Couleur pour les lignes paires */
+}
+
+.articleLine:nth-child(odd) {
+    background-color: var(--statPaleColor); /* Couleur pour les lignes impaires */
+}
+
 .articleLine .title {
     font-weight: bold;
     min-width: 200px;
@@ -404,6 +414,7 @@ tbody tr:nth-child(odd) {
     border-bottom: 1px solid var(--backgroundColor);
     padding: 25px;
     text-align: center;
+    color: white;
 }
 
 tr.table-row td:first-child {

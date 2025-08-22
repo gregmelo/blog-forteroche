@@ -16,8 +16,8 @@
                 <span class="th-content">
                     <span class="titre-colonne">Titre</span>
                     <span class="tri-colonne">
-                        <a href="index.php?action=showMoreInformations&sort=title&order=asc">▲</a>
-                        <a href="index.php?action=showMoreInformations&sort=title&order=desc">▼</a>
+                        <a href="index.php?action=statistiques&sort=title&order=asc">▲</a>
+                        <a href="index.php?action=statistiques&sort=title&order=desc">▼</a>
                     </span>
                 </span>
             </th>
@@ -25,8 +25,8 @@
                     <span class="titre-colonne">Vues
                     </span>
                     <span class="tri-colonne">
-                        <a href="index.php?action=showMoreInformations&sort=views&order=asc">▲</a>
-                        <a href="index.php?action=showMoreInformations&sort=views&order=desc">▼</a>
+                        <a href="index.php?action=statistiques&sort=views&order=asc">▲</a>
+                        <a href="index.php?action=statistiques&sort=views&order=desc">▼</a>
                     </span>
                 </span>
             </th>
@@ -34,8 +34,8 @@
                     <span class="titre-colonne">Commentaires
                     </span>
                     <span class="tri-colonne">
-                        <a href="index.php?action=showMoreInformations&sort=nb_comments&order=asc">▲</a>
-                        <a href="index.php?action=showMoreInformations&sort=nb_comments&order=desc">▼</a>
+                        <a href="index.php?action=statistiques&sort=nb_comments&order=asc">▲</a>
+                        <a href="index.php?action=statistiques&sort=nb_comments&order=desc">▼</a>
                     </span>
                 </span>
             </th>
@@ -43,8 +43,8 @@
                     <span class="titre-colonne">Date de publication
                     </span>
                     <span class="tri-colonne">
-                        <a href="index.php?action=showMoreInformations&sort=date_creation&order=asc">▲</a>
-                        <a href="index.php?action=showMoreInformations&sort=date_creation&order=desc">▼</a>
+                        <a href="index.php?action=statistiques&sort=date_creation&order=asc">▲</a>
+                        <a href="index.php?action=statistiques&sort=date_creation&order=desc">▼</a>
                     </span>
                 </span>
             </th>
