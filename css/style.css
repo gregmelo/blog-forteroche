@@ -402,7 +402,7 @@ tbody tr:nth-child(odd) {
 
 .table-row td {
     border-bottom: 1px solid var(--backgroundColor);
-    padding: 10px;
+    padding: 25px;
     text-align: center;
 }
 
